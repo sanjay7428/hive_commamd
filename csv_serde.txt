@@ -12,3 +12,9 @@ STORED AS TEXTFILE
 TBLPROPERTIES (
   'skip.header.line.count' = '1'
 );
+
+
+#json create table
+create table json_table2 ( name string, id int, skills array<string> )
+ row format serde 'org.apache.hadoop.hive.serde2.JsonSerDe' 
+stored as textfile;
